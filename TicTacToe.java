@@ -1,5 +1,7 @@
 import java.util.*;
 import javax.swing.*;
+import javax.swing.border.LineBorder;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -7,9 +9,12 @@ public class TicTacToe implements ActionListener{
 	
 	Random random = new Random();
 	JFrame frame = new JFrame();
+	JFrame winnerFrame = new JFrame();
+	JButton replayButton = new JButton("Replay");
 	JPanel title_panel = new JPanel();
 	JPanel button_panel = new JPanel();
 	JLabel textField = new JLabel();
+	JLabel winnerLabel;
 	JButton[] buttons = new JButton[9];
 	boolean player1Turn;
 	
@@ -47,6 +52,17 @@ public class TicTacToe implements ActionListener{
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 		
+		//Replay Button (new modification)
+		replayButton.setFont(new Font("MV Boli",Font.BOLD,40));
+		replayButton.setFocusable(false);
+		replayButton.setPreferredSize(new Dimension(200,60));
+		replayButton.setBorder(new LineBorder(Color.BLACK,5,true));
+		replayButton.addActionListener(e-> {
+			resetGame();
+			winnerFrame.dispose();
+		});
+		
+		
 		firstTurn();
 	}
 	void firstTurn(){
@@ -58,7 +74,7 @@ public class TicTacToe implements ActionListener{
 			e.printStackTrace();
 		}
 				
-		if(random.nextInt(2)==0) {     //provide random integer 0 or 1
+		if(random.nextInt(2)==0) {     //It provides random integer 0 or 1
 			player1Turn = true;        //0 as player one(O)
 			textField.setText("O turn");
 		}
@@ -122,6 +138,8 @@ public class TicTacToe implements ActionListener{
 			xWins(2,4,6);
 		}
 	}
+	
+	
 	void oWins(int x,int y, int z) {
 			textField.setText("O wins");
 			buttons[x].setBackground(Color.GREEN);
@@ -130,6 +148,7 @@ public class TicTacToe implements ActionListener{
 			for(int i=0;i<9;i++) {
 				buttons[i].setEnabled(false);
 			}
+			displayWinner("O");
 	}
 	void xWins(int x,int y, int z) {
 			textField.setText("X wins");
@@ -139,6 +158,36 @@ public class TicTacToe implements ActionListener{
 			for(int i=0;i<9;i++) {
 				buttons[i].setEnabled(false);
 			}
+			displayWinner("X");
+	}
+	void displayWinner(String winner) {
+		winnerFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		winnerFrame.setSize(400,300);
+		winnerFrame.setLayout(new BorderLayout());
+		
+		winnerLabel = new JLabel(winner + "wins!",JLabel.CENTER);
+		winnerLabel.setFont(new Font("MV Boli",Font.BOLD,40));
+		
+		JPanel winnerPanel = new JPanel();
+		winnerPanel.setLayout(new FlowLayout());
+		winnerPanel.add(replayButton);
+		
+		winnerFrame.add(winnerLabel,BorderLayout.CENTER);
+		winnerFrame.add(winnerPanel, BorderLayout.SOUTH);
+		winnerFrame.setLocationRelativeTo(null);
+		winnerFrame.setVisible(true);
+		
+	}
+	
+	void resetGame() {
+		for(int i=0;i<9;i++) {
+			buttons[i].setText("");
+			buttons[i].setBackground(UIManager.getColor("Button.background")); //default color
+			buttons[i].setFont(new Font("MV Boli",Font.BOLD,110));
+			buttons[i].setEnabled(true);
+		}
+		winnerLabel.setText("");
+		firstTurn(); //start a new game
 	}
 
 	@Override
