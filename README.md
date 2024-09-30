@@ -29,8 +29,7 @@ This project is a **Tic Tac Toe** game developed using **Java Swing**. It offers
 
 ## Screenshoots
 
-   <p align="center">   
-      <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s1.png" width="450" height="450" />
-      <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s1.png" width="450" height="450" />
-      <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s3.png" width="450" height="450" />
-      <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s4.png" width="450" height="450" />
+   <p align="center">  <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s1.png" width="450" height="450" /> </p>
+   <p align="center">   <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s2.png" width="450" height="450" /> </p>
+   <p align="center">   <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s3.png" width="450" height="450" /> </p>
+   <p align="center">   <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s4.png" width="450" height="450" /> </p>
