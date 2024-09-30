@@ -16,6 +16,7 @@ public class TicTacToe implements ActionListener{
 	JLabel textField = new JLabel();
 	JLabel winnerLabel;
 	JButton[] buttons = new JButton[9];
+	boolean[] isClicked = new boolean[9];
 	boolean player1Turn;
 	
 	TicTacToe(){
@@ -44,6 +45,7 @@ public class TicTacToe implements ActionListener{
 			buttons[i].setFont(new Font("MV Boli",Font.BOLD,110));
 			buttons[i].setFocusable(false);
 			buttons[i].addActionListener(this);
+			isClicked[i] = false;
 		}
 
 		title_panel.add(textField);
@@ -89,54 +91,68 @@ public class TicTacToe implements ActionListener{
 		if((buttons[0].getText()=="O") && (buttons[1].getText()=="O") && (buttons[2].getText()=="O")) {
 			oWins(0,1,2);
 		}
-		if((buttons[3].getText()=="O") && (buttons[4].getText()=="O") && (buttons[5].getText()=="O")) {
+		else if((buttons[3].getText()=="O") && (buttons[4].getText()=="O") && (buttons[5].getText()=="O")) {
 			oWins(3,4,5);
 		}
-		if((buttons[6].getText()=="O") && (buttons[7].getText()=="O") && (buttons[8].getText()=="O")) {
+		else if((buttons[6].getText()=="O") && (buttons[7].getText()=="O") && (buttons[8].getText()=="O")) {
 			oWins(6,7,8);
 		}
-		if((buttons[0].getText()=="O") && (buttons[3].getText()=="O") && (buttons[6].getText()=="O")) {
+		else if((buttons[0].getText()=="O") && (buttons[3].getText()=="O") && (buttons[6].getText()=="O")) {
 			oWins(0,3,6);
 		}
-		if((buttons[1].getText()=="O") && (buttons[4].getText()=="O") && (buttons[7].getText()=="O")) {
+		else if((buttons[1].getText()=="O") && (buttons[4].getText()=="O") && (buttons[7].getText()=="O")) {
 			oWins(1,4,7);
 		}
-		if((buttons[2].getText()=="O") && (buttons[6].getText()=="O") && (buttons[8].getText()=="O")) {
+		else if((buttons[2].getText()=="O") && (buttons[6].getText()=="O") && (buttons[8].getText()=="O")) {
 			oWins(2,6,8);
 		}
-		if((buttons[0].getText()=="O") && (buttons[4].getText()=="O") && (buttons[8].getText()=="O")) {
+		else if((buttons[0].getText()=="O") && (buttons[4].getText()=="O") && (buttons[8].getText()=="O")) {
 			oWins(0,4,8);
 		}
-		if((buttons[2].getText()=="O") && (buttons[4].getText()=="O") && (buttons[6].getText()=="O")) {
+		else if((buttons[2].getText()=="O") && (buttons[4].getText()=="O") && (buttons[6].getText()=="O")) {
 			oWins(2,4,6);
 		}
 		
 		
 		//x wins condition
-		if((buttons[0].getText()=="X") && (buttons[1].getText()=="X") && (buttons[2].getText()=="X")) {
+		else if((buttons[0].getText()=="X") && (buttons[1].getText()=="X") && (buttons[2].getText()=="X")) {
 			xWins(0,1,2);
 		}
-		if((buttons[3].getText()=="X") && (buttons[4].getText()=="X") && (buttons[5].getText()=="X")) {
+		else if((buttons[3].getText()=="X") && (buttons[4].getText()=="X") && (buttons[5].getText()=="X")) {
 			xWins(3,4,5);
 		}
-		if((buttons[6].getText()=="X") && (buttons[7].getText()=="X") && (buttons[8].getText()=="X")) {
+		else if((buttons[6].getText()=="X") && (buttons[7].getText()=="X") && (buttons[8].getText()=="X")) {
 			xWins(6,7,8);
 		}
-		if((buttons[0].getText()=="X") && (buttons[3].getText()=="X") && (buttons[6].getText()=="X")) {
+		else if((buttons[0].getText()=="X") && (buttons[3].getText()=="X") && (buttons[6].getText()=="X")) {
 			xWins(0,3,6);
 		}
-		if((buttons[1].getText()=="X") && (buttons[4].getText()=="X") && (buttons[7].getText()=="X")) {
+		else if((buttons[1].getText()=="X") && (buttons[4].getText()=="X") && (buttons[7].getText()=="X")) {
 			xWins(1,4,7);
 		}
-		if((buttons[2].getText()=="X") && (buttons[6].getText()=="X") && (buttons[8].getText()=="X")) {
+		else if((buttons[2].getText()=="X") && (buttons[6].getText()=="X") && (buttons[8].getText()=="X")) {
 			xWins(2,6,8);
 		}
-		if((buttons[0].getText()=="X") && (buttons[4].getText()=="X") && (buttons[8].getText()=="X")) {
+		else if((buttons[0].getText()=="X") && (buttons[4].getText()=="X") && (buttons[8].getText()=="X")) {
 			xWins(0,4,8);
 		}
-		if((buttons[2].getText()=="X") && (buttons[4].getText()=="X") && (buttons[6].getText()=="X")) {
+		else if((buttons[2].getText()=="X") && (buttons[4].getText()=="X") && (buttons[6].getText()=="X")) {
 			xWins(2,4,6);
 		}
+		
+		//condition for draw
+		else{
+			int track = 1;
+			for(int i=0;i<9;i++) {
+				if(!isClicked[i]) {
+					track = 0;
+				}
+			}
+			if(track == 1)
+				draw();
+		}
+		
+		
 	}
 	
 	
@@ -160,12 +176,19 @@ public class TicTacToe implements ActionListener{
 			}
 			displayWinner("X");
 	}
+	void draw() {
+		textField.setText("Match Drawn");
+		displayWinner("Match Drawn");
+	}
 	void displayWinner(String winner) {
 		winnerFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		winnerFrame.setSize(400,300);
 		winnerFrame.setLayout(new BorderLayout());
 		
-		winnerLabel = new JLabel(winner + "wins!",JLabel.CENTER);
+		if(winner.equals("Match Drawn"))
+			winnerLabel = new JLabel(winner,JLabel.CENTER);
+		else
+			winnerLabel = new JLabel(winner + "wins!",JLabel.CENTER);
 		winnerLabel.setFont(new Font("MV Boli",Font.BOLD,40));
 		
 		JPanel winnerPanel = new JPanel();
@@ -185,6 +208,7 @@ public class TicTacToe implements ActionListener{
 			buttons[i].setBackground(UIManager.getColor("Button.background")); //default color
 			buttons[i].setFont(new Font("MV Boli",Font.BOLD,110));
 			buttons[i].setEnabled(true);
+			isClicked[i] = false;
 		}
 		winnerLabel.setText("");
 		firstTurn(); //start a new game
@@ -195,6 +219,7 @@ public class TicTacToe implements ActionListener{
 		
 		for(int i=0;i<9;i++) {   
 			if(e.getSource() == buttons[i] ) {
+				isClicked[i] = true;      
 				if(player1Turn) {
 					if(buttons[i].getText()=="") {
 						buttons[i].setForeground(new Color(0,0,255));
