@@ -17,6 +17,24 @@ This project is a **Tic Tac Toe** game developed using **Java Swing**. It offers
 - **Swing**
 - **Java AWT (Abstract Window Toolkit)**
 
+## Screenshots
+
+1. **Opening Window**: The initial window that appears after launching the TicTacToe game.
+   
+   <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s1.png" width="450" height="450" />
+   
+2. **Player's Turn**: Displays the current player's turn during the game.
+   
+   <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s2.png" width="450" height="450" />
+   
+3. **Winning Screen**: Announces the winner of the match with a highlighted win.
+   
+   <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s3.png" width="450" height="450" />
+   
+4. **Replay Window**: Shows the winner's name and offers the option to replay the game.
+   
+   <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s4.png" width="450" height="450" />
+
 ## How to Run
 
 1. Clone the repository:
@@ -27,22 +45,12 @@ This project is a **Tic Tac Toe** game developed using **Java Swing**. It offers
    javac TicTacToe.java
    java TicTacToe
 
-## Screenshots
+## Future Enhancements
 
-1. Opening window
-   
-   <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s1.png" width="450" height="450" />
-   
-2. Player turn
-   
-   <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s2.png" width="450" height="450" />
-   
-3. Win window
-   
-   <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s3.png" width="450" height="450" />
-   
-4. Replay window
-   
-   <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s4.png" width="450" height="450" />
+- Add support for different difficulty levels.
+- Implement a single-player mode with an AI opponent.
+
+## Contact
+For any questions or suggestions, feel free to contact me at **tareqrahaman565@gmail.com**
    
 
