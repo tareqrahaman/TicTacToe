@@ -30,10 +30,10 @@ This project is a **Tic Tac Toe** game developed using **Java Swing**. It offers
 ## Screenshoots
 
    - Opening window
-   <p align="center">  <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s1.png" width="450" height="450" /> </p>
+      <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s1.png" width="450" height="450" />
    - Player turn
-   <p align="center">   <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s2.png" width="450" height="450" /> </p>
+      <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s2.png" width="450" height="450" />
    - Win window
-   <p align="center">   <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s3.png" width="450" height="450" /> </p>
+      <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s3.png" width="450" height="450" />
    - Replay window
-   <p align="center">   <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s4.png" width="450" height="450" /> </p>
+      <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s4.png" width="450" height="450" />
