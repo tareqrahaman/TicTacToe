@@ -9,7 +9,6 @@ This project is a **Tic Tac Toe** game developed using **Java Swing**. It offers
 - **Winning Detection**: Automatically checks for winning combinations and declares the winner.
 - **Draw Detection**: Detects when the board is full without any winner and declares a draw.
 - **Replay Button**: After each match (win or draw), a replay button is displayed to restart the game.
-- **Responsive UI**: The game layout automatically adjusts for different screen sizes.
 - **Easy to Modify**: Well-structured code allows for easy customization and extensions.
 
 ## Technologies Used
@@ -22,5 +21,16 @@ This project is a **Tic Tac Toe** game developed using **Java Swing**. It offers
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/tic-tac-toe-java-swing.git
+   git clone https://github.com/tareqrahaman/TicTacToe.git
+2. Compile and run the project:
+   ```bash
+   javac TicTacToe.java
+   java TicTacToe
+
+## Screenshoots
+
+   ![Screenshot 2024-09-30 122223](https://github.com/user-attachments/assets/44df3d48-c8b6-49ee-8c5e-6db773ff0964)
+   ![Screenshot 2024-09-30 122525](https://github.com/user-attachments/assets/a5977de0-c1e8-47c3-86b4-19c911d61477)
+   ![Screenshot 2024-09-30 122701](https://github.com/user-attachments/assets/706e1ae8-eb68-483d-9022-2f2c308286de)
+   ![Screenshot 2024-09-30 122741](https://github.com/user-attachments/assets/5e5f1537-b3d2-4c73-a99e-b268d235e490)
 
