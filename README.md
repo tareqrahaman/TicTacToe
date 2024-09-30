@@ -30,7 +30,7 @@ This project is a **Tic Tac Toe** game developed using **Java Swing**. It offers
 ## Screenshoots
 
    
-   <img src="https://camo.githubusercontent.com/..." data-canonical-src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s1.png" width="400" height="450" />
+   <img src="https://github.com/tareqrahaman/TicTacToe/blob/main/img-src/s1.png" width="400" height="450" />
    ![Screenshot 2024-09-30 122525](https://github.com/user-attachments/assets/a5977de0-c1e8-47c3-86b4-19c911d61477)
    ![Screenshot 2024-09-30 122701](https://github.com/user-attachments/assets/706e1ae8-eb68-483d-9022-2f2c308286de)
    ![Screenshot 2024-09-30 122741](https://github.com/user-attachments/assets/5e5f1537-b3d2-4c73-a99e-b268d235e490)
